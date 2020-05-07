@@ -1,0 +1,18 @@
+﻿  MIPS Assembler.cpp
+d:\projects\c++\visual studio projects\mips assembler\mips assembler\mips assembler.cpp(1000): error C3867: 'std::vector<std::string,std::allocator<_Ty>>::size': non-standard syntax; use '&' to create a pointer to member
+          with
+          [
+              _Ty=std::string
+          ]
+d:\projects\c++\visual studio projects\mips assembler\mips assembler\mips assembler.cpp(1000): error C2446: '<': no conversion from 'unsigned int (__thiscall std::vector<std::string,std::allocator<_Ty>>::* )(void) noexcept const' to 'int'
+          with
+          [
+              _Ty=std::string
+          ]
+  d:\projects\c++\visual studio projects\mips assembler\mips assembler\mips assembler.cpp(1000): note: There is no context in which this conversion is possible
+d:\projects\c++\visual studio projects\mips assembler\mips assembler\mips assembler.cpp(1003): error C2440: 'type cast': cannot convert from 'int' to 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>'
+          with
+          [
+              _Ty=int
+          ]
+  d:\projects\c++\visual studio projects\mips assembler\mips assembler\mips assembler.cpp(1003): note: No constructor could take the source type, or constructor overload resolution was ambiguous

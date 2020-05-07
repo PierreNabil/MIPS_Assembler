@@ -1,0 +1,19 @@
+# Test Code no.4
+
+# this tests all Arithmatic & Logical immediate instructions
+
+# returns: 	$t0 = 5
+#		$t1 = 0
+#		$t2 = 0101 && 1100 = 0100 = 4
+#		$t3 = 0101 || 1100 = 1101 = d
+#		$t4 = 0101 xor 1100= 1001 = 9
+#		$t5 = 000a0000
+
+
+
+main:	addi $t0, $0, 5
+	addi $t1, $t0, -5
+	andi $t2, $t0, 12
+	ori  $t3, $t0, 12
+	xori $t4, $t0, 12
+	lui  $t5, 10

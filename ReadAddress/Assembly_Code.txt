@@ -1,0 +1,16 @@
+# Test Code no.2
+
+# adds all numbers between $s1 & $s2
+# the result is stored in $s3 
+
+# returns: $s3 = 5+6+7+8+9+a = 2d 
+
+main: 	addi $s1, $0, 5		# A
+	addi $s2, $0, 10	# B
+	add $t0, $0, $0
+loop:	add $t0, $t0, $s1	# acc += A
+	slt $t1, $s1, $s2
+	beq $t1, $0, done	#branch if A >= B
+	addi $s1, $s1, 1	# A++
+	j loop
+done:	sw $t0, 0($0)

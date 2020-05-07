@@ -1,0 +1,15 @@
+# Test Code no.9
+
+# this program tests when branch inst. jumps to a preveous instruction
+
+# return :	Dmem[0]  = 0
+#		Dmem[4]  = 4
+#		Dmem[8]  = 8
+#		Dmem[12] = 12
+
+
+main:	addi $s0, $0, 0
+	addi $s1, $0, 16
+loop:	sw $s0, 0($s0)
+	addi $s0, $s0, 4
+	bne $s0, $s1, loop

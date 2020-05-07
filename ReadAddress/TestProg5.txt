@@ -1,0 +1,27 @@
+# Test Code no.5
+
+# this program tests the load and store instructions
+# including overflow functionality
+
+# returns: 	$t0 = 00ffffff
+#		$t1 = 39152703
+#		$t2 = ffff3915
+#		$t3 = 0000ff39
+#		$t4 = 00000027
+
+
+
+main:	addi $s0, $0, 3		# 0000 0003
+	addi $s1, $0, 21	# 0000 0015
+	addi $s2, $0, 39	# 0000 0027
+	addi $s3, $0, -199	# ffff ff39
+	sw $s0, 4($0)
+	sh $s1, 6($0)
+	sb $s2, 5($0)
+	sw $0 , 8($0)
+	sw $s3, 7($0)
+	lw $t0 ,8($0)
+	lw $t1 ,4($0)
+	lw $t2 ,6($0)
+	lh $t3 ,7($0)
+	lb $t4 ,5($0)

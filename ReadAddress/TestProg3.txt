@@ -1,0 +1,31 @@
+# Test Code no.3
+
+# this program tests the logical & Arithmatic operations
+# it also tests the offsets from a base register in load and store instructions
+
+# returns: 	DMem[4] = A && B = 0001 = 1
+#		DMem[8] = A || B = 0111 = 7
+#		DMem[12] = A xor B = 0110 = 6
+#		DMem[16] = A nor B = 1000 = -8
+#		DMem[20] = A add B = 1000 = 8
+#		DMem[24] = A sub B = 0010 = 2
+#		DMem[28] = B sub A = 1110 = -2
+
+
+
+main:	addi $s0, $0, 5		# A = 0101 = 5
+	addi $s1, $0, 3		# B = 0011 = 3
+	and  $t0, $s0, $s1
+	or   $t1, $s0, $s1
+	xor  $t2, $s0, $s1
+	nor  $t3, $s0, $s1
+	add  $t4, $s0, $s1
+	sub  $t5, $s0, $s1
+	sub  $t6, $s1, $s0
+	sw   $t0, 4($0)
+	sw   $t1, 8($0)
+	sw   $t2, 12($0)
+	sw   $t3, 16($0)
+	sw   $t4, 20($0)
+	sw   $t5, 24($0)
+	sw   $t6, 28($0)

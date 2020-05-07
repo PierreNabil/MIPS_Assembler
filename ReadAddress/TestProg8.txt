@@ -1,0 +1,36 @@
+# Test Code no.8
+
+# this program moves array contents from one array to another
+# for(i=0; i<n; i++)
+#   B[i] = A[i]
+
+# returns: Dmem[2000:2024] = Dmem[1000:1024]
+
+
+
+main:	addi $s4, $0, 1000	# set array A Base
+	addi $s3, $0, 6		# set array size (n)
+	add  $s2, $0, $0	# (i)
+For1:	slt $t0, $s2, $s3	# sets the array elements
+	beq $t0, $0, Exit1
+	sll $t1, $s2, 2		# get element address
+	add $t1, $t1, $s4
+	addi $t2, $s2, 5	# set element value
+	sw $t2, 0($t1)
+	addi $s2, $s2, 1
+	j For1
+Exit1:	nop
+
+	addi $s5, $0, 2000	# set array B Base
+	add  $s2, $0, $0	# (i=0)
+For2:	slt $t0, $s2, $s3	# sets the array elements
+	beq $t0, $0, Exit2
+	sll $t1, $s2, 2		# get element address
+	add $t2, $t1, $s5
+	add $t1, $t1, $s4
+	lw $t3, 0($t1)
+	sw $t3, 0($t2)
+	addi $s2, $s2, 1
+	j For2
+Exit2:	nop
+	

@@ -1,0 +1,48 @@
+# Test Code no.6
+
+# this code tests the if conditions: == , != , < , <= , > , >= 
+
+# returns:	$t0 = 0
+#		$t1 = 1
+#		$t2 = 1
+#		$t3 = 1
+#		$t4 = 0
+#		$t5 = 0
+
+
+
+main:	addi $s0, $0, 3
+	addi $s1, $0, 5
+
+	beq $s0, $s1, eql	# $t0 = ($s0 == $s1)? 1:0;
+	add $t0, $0, $0
+	j out1
+eql:	addi $t0, $0, 1
+out1:	nop
+
+
+	bne $s0, $s1, neq	# $t1 = ($s0 != $s1)? 1:0;
+	add $t1, $0, $0
+	j out2
+neq:	addi $t1, $0, 1
+out2:	nop
+
+	slt $t2, $s0, $s1	# $t2 = ($s0 < $s1)? 1:0;
+
+	slt $t3, $s1, $s0	# $t3 = ($s0 <= $s1)? 1:0;
+	beq $t3, $0, loeq
+	add $t3, $0, $0
+	j out3
+loeq:	addi $t3, $0, 1
+out3:	nop
+
+	slt $t4, $s1, $s0	# $t4 = ($s0 > $s1)? 1:0;
+
+	slt $t5, $s0, $s1	# $t5 = ($s0 >= $s1)? 1:0;
+	beq $t5, $0, goeq
+	add $t5, $0, $0
+	j out4
+goeq:	addi $t5, $0, 1
+out4:	nop
+
+

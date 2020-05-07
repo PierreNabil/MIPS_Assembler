@@ -1,0 +1,12 @@
+# Test Code no.1
+
+# This Program Tests the Shift Instructions
+
+# returns:	$t0 = ffffffa0
+#		$t1 = 0fffffff
+#		$t2 = ffffffff
+
+main:	addi $s0, $0, -6	# fffffffa
+	sll  $t0, $s0, 4	# ffffffa0
+	srl  $t1, $s0, 4	# 0fffffff
+	sra  $t2, $s0, 4	# ffffffff

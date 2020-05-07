@@ -1,0 +1,35 @@
+# Test Code no.7
+
+# this program takes an Array in memory
+# and calculates the sum of all it's elements
+# for(i=0; i<n; i++)
+#   g = g + A[i]
+
+# returns: $s1 = 5+6+7+8+9+10 = 45 = 0x2d
+
+
+
+main:	addi $s4, $0, 1000	# set array Base
+	addi $s3, $0, 6		# set array size (n)
+	add  $s1, $0, $0	# (g)
+	add  $s2, $0, $0	# (i)
+For1:	slt $t0, $s2, $s3	# sets the array elements
+	beq $t0, $0, Exit1
+	sll $t1, $s2, 2		# get element address
+	add $t1, $t1, $s4
+	addi $t2, $s2, 5	# set element value
+	sw $t2, 0($t1)
+	addi $s2, $s2, 1
+	j For1
+Exit1:	nop
+
+	add  $s2, $0, $0	# i=0
+For2:	slt $t0, $s2, $s3	# (i<n)?
+	beq $t0, $0, Exit2
+	sll $t1, $s2, 2		# get element address
+	add $t1, $t1, $s4
+	lw $t2, 0($t1)
+	add $s1, $s1, $t2	# g = g + A[i]
+	addi $s2, $s2, 1	# i++
+	j For2
+Exit2:	nop
